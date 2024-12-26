@@ -1,5 +1,5 @@
 const App = () => {
-  return <>123</>;
+  return <>{String(__IS_DEV__)}</>;
 };
 
 export default App;

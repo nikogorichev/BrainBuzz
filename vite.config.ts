@@ -12,7 +12,6 @@ export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
     host: true,
     port: Number(env.VITE_PORT),
     strictPort: true,
-
   };
 
   return {
@@ -22,6 +21,9 @@ export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
     build: {
       outDir: "build",
       sourcemap: env.VITE_SOURCEMAP === "true",
+    },
+    define: {
+      __IS_DEV__: JSON.stringify(mode === "development"),
     },
   };
 });
