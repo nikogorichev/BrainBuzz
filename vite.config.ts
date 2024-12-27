@@ -5,10 +5,7 @@ import path from "path";
 export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
   console.log(`configuring vite with command: ${command}, mode: ${mode}`);
   const cwd = process.cwd();
-  console.log(`loading envs from ${cwd} ...`);
   const env = { ...loadEnv(mode, cwd, "VITE_") };
-  console.log(`loaded env: ${JSON.stringify(env)}`);
-  console.log(path.resolve(__dirname, "src"));
 
   const serverConfig: UserConfig["server"] = {
     host: true,
@@ -29,7 +26,7 @@ export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
     },
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "src"),
+        src: path.resolve(__dirname, "src"),
       },
     },
   };
