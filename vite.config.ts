@@ -26,7 +26,8 @@ export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
     },
     resolve: {
       alias: {
-        src: path.resolve(__dirname, "src"),
+        "@src": path.resolve(__dirname, "src"),
+        app: path.resolve(__dirname, "src/app"),
       },
     },
   };
