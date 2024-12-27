@@ -1,5 +1,5 @@
 const App = () => {
-  return <>{String(__IS_DEV__)}</>;
+  return <div className="app">{String(__IS_DEV__)}</div>;
 };
 
 export default App;
