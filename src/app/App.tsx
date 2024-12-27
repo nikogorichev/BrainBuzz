@@ -1,5 +1,11 @@
+import { Navbar } from "widgets/Navbar";
+
 const App = () => {
-  return <div className="app">{String(__IS_DEV__)}</div>;
+  return (
+    <div className="app">
+      <Navbar />
+    </div>
+  );
 };
 
 export default App;

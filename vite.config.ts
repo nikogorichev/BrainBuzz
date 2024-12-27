@@ -1,5 +1,6 @@
 import { defineConfig, ConfigEnv, loadEnv, UserConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import svgr from "vite-plugin-svgr";
 import path from "path";
 
 export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
@@ -14,7 +15,18 @@ export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
   };
 
   return {
-    plugins: [react()],
+    plugins: [
+      react(),
+      svgr({
+        svgrOptions: {
+          exportType: "default",
+          ref: true,
+          svgo: false,
+          titleProp: true,
+        },
+        include: "**/*.svg",
+      }),
+    ],
     preview: serverConfig,
     server: serverConfig,
     build: {
@@ -28,6 +40,11 @@ export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
       alias: {
         "@src": path.resolve(__dirname, "src"),
         app: path.resolve(__dirname, "src/app"),
+        entities: path.resolve(__dirname, "src/entities"),
+        features: path.resolve(__dirname, "src/features"),
+        pages: path.resolve(__dirname, "src/pages"),
+        shared: path.resolve(__dirname, "src/shared"),
+        widgets: path.resolve(__dirname, "src/widgets"),
       },
     },
   };
