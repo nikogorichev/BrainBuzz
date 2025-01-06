@@ -5,6 +5,7 @@ export const Navbar = () => {
   return (
     <header className={cls.navbar}>
        <ThemeSwitcher />
+       
     </header>
   );
 };
