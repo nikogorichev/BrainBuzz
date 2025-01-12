@@ -3,10 +3,7 @@ import { ReactNode } from "react";
 import { Link, LinkProps } from "react-router";
 import { classNames } from "shared/lib/helpers/classNames/classNames";
 
-export enum AppLinkTheme {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-}
+type AppLinkTheme = "primary" | "secondary";
 
 interface Props extends LinkProps {
   children: ReactNode;
@@ -15,13 +12,7 @@ interface Props extends LinkProps {
 }
 
 export const AppLink = (props: Props) => {
-  const {
-    className,
-    theme = AppLinkTheme.PRIMARY,
-    children,
-    to,
-    ...otherProps
-  } = props;
+  const { className, theme = "primary", children, to, ...otherProps } = props;
 
   return (
     <Link

@@ -39,7 +39,7 @@ export type FlexProps = {
   align?: FlexAlign;
   direction?: FlexDirection;
   gap?: FlexGap;
-  component?: keyof JSX.IntrinsicElements | ElementType;
+  as?: keyof JSX.IntrinsicElements | ElementType;
   max?: boolean;
 };
 
@@ -51,7 +51,7 @@ export const Flex = (props: FlexProps) => {
     align = "center",
     direction = "row",
     gap,
-    component = "div",
+    as = "div",
     max,
   } = props;
 
@@ -67,7 +67,7 @@ export const Flex = (props: FlexProps) => {
     [cls.maxWidth]: max,
   };
 
-  const ComponentWrapper = component;
+  const ComponentWrapper = as;
 
   return (
     <ComponentWrapper

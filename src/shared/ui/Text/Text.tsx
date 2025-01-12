@@ -1,22 +1,19 @@
 import cls from "./Text.module.scss";
 import { classNames } from "shared/lib/helpers/classNames/classNames";
 
-export enum TextTheme {
-  PRIMARY = "primary",
-  ERROR = "error",
-}
-
-export enum TextSize {
-  M = "size_m",
-  L = "size_l",
-}
+type TextTheme = "primary" | "error";
+type TextAlign = "right" | "left" | "center";
+type TextSize = "size_s" | "size_m" | "size_l";
+type TitleTagType = "h1" | "h2" | "h3" | "p";
 
 type Props = {
   className?: string;
   title?: string;
   text?: string;
   theme?: TextTheme;
+  align?: TextAlign;
   size?: TextSize;
+  titleTag?: TitleTagType;
 };
 
 export const Text = (props: Props) => {
@@ -24,15 +21,19 @@ export const Text = (props: Props) => {
     className,
     title,
     text,
-    theme = TextTheme.PRIMARY,
-    size = TextSize.M,
+    theme = "primary",
+    align = "left",
+    size = "size_m",
+    titleTag = "p",
   } = props;
 
-  const additionalStyles = [className, cls[theme], cls[size]];
+  const additionalStyles = [className, cls[theme], cls[align], cls[size]];
+
+  const Title = titleTag;
 
   return (
     <div className={classNames(cls.wrapper, {}, additionalStyles)}>
-      {title && <p className={cls.title}>{title}</p>}
+      {title && <Title className={cls.title}>{title}</Title>}
       {text && <p className={cls.text}>{text}</p>}
     </div>
   );

@@ -2,17 +2,8 @@ import cls from "./Button.module.scss";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import { classNames, Mods } from "shared/lib/helpers/classNames/classNames";
 
-export enum ButtonTheme {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-  CLEAR = "clear",
-}
-
-export enum ButtonSize {
-  M = "size_m",
-  L = "size_l",
-  XL = "size_xl",
-}
+type ButtonTheme = "primary" | "secondary" | "clear";
+type ButtonSize = "size_m" | "size_l" | "size_xl";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -26,8 +17,8 @@ export const Button = (props: Props) => {
     className,
     children,
     disabled,
-    theme = ButtonTheme.PRIMARY,
-    size = ButtonSize.M,
+    theme = "primary",
+    size = "size_m",
     ...otherProps
   } = props;
 
