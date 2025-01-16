@@ -1,5 +1,18 @@
+import { Navbar } from "widgets/Navbar";
+import { AppRouter } from "./providers/router";
+import { useScreenSize } from "./providers/ScreenSizeProvider";
+
 const App = () => {
-  return <div className="app">{String(__IS_DEV__)}</div>;
+  const { isMobile } = useScreenSize();
+  return (
+    <div className="app">
+      <Navbar />
+      <div className="content">
+        {isMobile ? "Мобилка" : "Десктоп"}
+        <AppRouter />
+      </div>
+    </div>
+  );
 };
 
 export default App;
