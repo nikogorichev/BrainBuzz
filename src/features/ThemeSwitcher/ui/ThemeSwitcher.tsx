@@ -1,5 +1,5 @@
 import { Theme, useTheme } from "app/providers/ThemeProvider";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Button } from "shared/ui/Button/Button";
 import DarkIcon from "shared/assets/themeDark.svg";
 import LightIcon from "shared/assets/themeLight.svg";
 
@@ -12,7 +12,7 @@ export const ThemeSwitcher = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <Button onClick={toggleTheme} theme={ButtonTheme.CLEAR}>
+    <Button onClick={toggleTheme} theme="clear">
       {iconsThemeList[theme]}
     </Button>
   );
