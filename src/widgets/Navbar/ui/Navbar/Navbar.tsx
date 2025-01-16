@@ -1,11 +1,18 @@
 import cls from "./Navbar.module.scss";
-import { ThemeSwitcher } from "widgets/ThemeSwitcher/ui/ThemeSwitcher";
+import { HStack } from "shared/ui/Stack";
+import { ThemeSwitcher } from "features/ThemeSwitcher/ui/ThemeSwitcher";
+import { getNavigationItems, NavigationItem } from "entities/NavigationItems";
 
 export const Navbar = () => {
+  const navigationItems = getNavigationItems();
   return (
-    <header className={cls.navbar}>
-       <ThemeSwitcher />
-       
-    </header>
+    <HStack className={cls.navbar} as="header" justify="between">
+      <HStack as="nav" gap="16">
+        {navigationItems.map((item) => (
+          <NavigationItem key={item.path} item={item} />
+        ))}
+      </HStack>
+      <ThemeSwitcher />
+    </HStack>
   );
 };
