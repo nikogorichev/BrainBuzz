@@ -1,6 +1,7 @@
 import { defineConfig, ConfigEnv, loadEnv, UserConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import svgr from "vite-plugin-svgr";
+import tsconfigPaths from "vite-tsconfig-paths";
 import path from "path";
 
 export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
@@ -17,6 +18,7 @@ export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
   return {
     plugins: [
       react(),
+      tsconfigPaths(),
       svgr({
         svgrOptions: {
           exportType: "default",
