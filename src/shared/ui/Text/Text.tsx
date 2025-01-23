@@ -31,6 +31,8 @@ export const Text = (props: Props) => {
 
   const Title = titleTag;
 
+  const a: any = null
+
   return (
     <div className={classNames(cls.wrapper, {}, additionalStyles)}>
       {title && <Title className={cls.title}>{title}</Title>}

@@ -25,5 +25,6 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": "./src",
   },
-  "include": ["src", "./jest.setup.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "config/**/*.ts", "vite.config.ts"],
+  "exclude": ["node_modules", "dist"]
 }
