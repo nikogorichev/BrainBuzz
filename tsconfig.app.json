@@ -23,7 +23,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "baseUrl": "./src",
+    "baseUrl": "./src"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "config/**/*.ts", "vite.config.ts"],
   "exclude": ["node_modules", "dist"]

@@ -11,8 +11,8 @@ export default {
     "^@/(.*)$": "<rootDir>/src/$1",
   },
   rootDir: "../../",
-  testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[ts]s?(x)"],
-  modulePaths: ["<rootDir>src"],
-  moduleDirectories: ["node_modules", "src"],
-  setupFilesAfterEnv: ["<rootDir>config/jest/jest.setup.ts"],
+  testMatch: [ "<rootDir>src/**/*(*.)@(spec|test).[ts]s?(x)" ],
+  modulePaths: [ "<rootDir>src" ],
+  moduleDirectories: [ "node_modules", "src" ],
+  setupFilesAfterEnv: [ "<rootDir>config/jest/jest.setup.ts" ],
 };
