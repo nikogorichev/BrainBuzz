@@ -27,7 +27,6 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       ...tseslint.configs.recommended.rules,
-      "@typescript-eslint/no-explicit-any": "error",
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },

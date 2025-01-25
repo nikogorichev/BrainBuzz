@@ -1,3 +1,4 @@
+import { VStack } from "../Stack";
 import cls from "./Text.module.scss";
 import { classNames } from "shared/lib/helpers/classNames/classNames";
 
@@ -31,12 +32,10 @@ export const Text = (props: Props) => {
 
   const Title = titleTag;
 
-  const a: any = null
-
   return (
-    <div className={classNames(cls.wrapper, {}, additionalStyles)}>
+    <VStack className={classNames("", {}, additionalStyles)}>
       {title && <Title className={cls.title}>{title}</Title>}
       {text && <p className={cls.text}>{text}</p>}
-    </div>
+    </VStack>
   );
 };
