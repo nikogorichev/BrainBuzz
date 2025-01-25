@@ -70,9 +70,7 @@ export const Flex = (props: FlexProps) => {
   const ComponentWrapper = as;
 
   return (
-    <ComponentWrapper
-      className={classNames(cls.flexWrapper, mode, additionalClasses)}
-    >
+    <ComponentWrapper className={classNames(cls.flexWrapper, mode, additionalClasses)}>
       {children}
     </ComponentWrapper>
   );

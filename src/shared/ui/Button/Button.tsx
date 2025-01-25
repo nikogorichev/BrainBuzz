@@ -26,14 +26,10 @@ export const Button = (props: Props) => {
     [cls.disabled]: disabled,
   };
 
-  const optional: string[] = [className || "", cls[theme], cls[size]];
+  const optional: string[] = [ className || "", cls[theme], cls[size] ];
 
   return (
-    <button
-      className={classNames(cls.button, mods, optional)}
-      disabled={disabled}
-      {...otherProps}
-    >
+    <button className={classNames(cls.button, mods, optional)} disabled={disabled} {...otherProps}>
       {children}
     </button>
   );

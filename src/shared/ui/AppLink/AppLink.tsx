@@ -15,11 +15,7 @@ export const AppLink = (props: Props) => {
   const { className, theme = "primary", children, to, ...otherProps } = props;
 
   return (
-    <Link
-      to={to}
-      className={classNames(cls.appLink, {}, [className, cls[theme]])}
-      {...otherProps}
-    >
+    <Link to={to} className={classNames(cls.appLink, {}, [ className, cls[theme] ])} {...otherProps}>
       {children}
     </Link>
   );
