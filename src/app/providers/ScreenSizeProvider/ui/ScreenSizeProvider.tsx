@@ -10,7 +10,7 @@ const MOBILE_WIDTH = 768;
 const ScreenSizeProvider = (props: Props) => {
   const { children } = props;
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [ isMobile, setIsMobile ] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < MOBILE_WIDTH);
@@ -18,11 +18,7 @@ const ScreenSizeProvider = (props: Props) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return (
-    <ScreenSizeContext.Provider value={{ isMobile }}>
-      {children}
-    </ScreenSizeContext.Provider>
-  );
+  return <ScreenSizeContext.Provider value={{ isMobile }}>{children}</ScreenSizeContext.Provider>;
 };
 
 export default ScreenSizeProvider;
