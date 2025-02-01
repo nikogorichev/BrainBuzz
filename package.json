@@ -11,7 +11,7 @@
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "test": "jest",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --config-dir ./config/storybook",
     "build-storybook": "storybook build"
   },
   "dependencies": {
