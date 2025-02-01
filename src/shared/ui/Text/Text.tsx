@@ -30,7 +30,6 @@ export const Text = (props: Props) => {
 
   const additionalStyles = [className, cls[theme], cls[align], cls[size]];
 
-  const a: any = null
   const Title = titleTag;
 
   return (
