@@ -20,18 +20,28 @@ export const Primary: Story = {
 };
 
 export const Secondary: Story = {
-    args: { children: "Text", theme: "secondary" },
-  };
+  args: { children: "Text", theme: "secondary" },
+};
 
 export const Clear: Story = {
   args: { children: "Text", theme: "clear" },
 };
 
-Primary.decorators = [ThemeDecorator(Theme.DARK)];
+export const PrimaryDark: Story = {
+  args: { children: "Text" },
+};
+
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SecondaryDark: Story = {
+  args: { children: "Text", theme: "secondary" },
+};
+
+SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Disabled: Story = {
   args: {
     children: "Text",
-    disabled: true
+    disabled: true,
   },
 };
