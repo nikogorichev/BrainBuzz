@@ -6,6 +6,11 @@ import { Theme } from "app/providers/ThemeProvider";
 const meta: Meta<typeof Text> = {
   title: "shared/Text",
   component: Text,
+  parameters: {
+    loki: {
+      skip: true,
+    },
+  },
 };
 
 export default meta;

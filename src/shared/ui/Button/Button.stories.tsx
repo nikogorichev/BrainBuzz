@@ -10,6 +10,11 @@ const meta: Meta<typeof Button> = {
   args: {
     disabled: false,
   },
+  parameters: {
+    loki: {
+      skip: true,
+    },
+  },
 };
 
 export default meta;

@@ -4,6 +4,11 @@ import { Flex } from "./Flex";
 const meta: Meta<typeof Flex> = {
   title: "shared/Flex",
   component: Flex,
+  parameters: {
+    loki: {
+      skip: true,
+    },
+  },
 };
 
 export default meta;

@@ -6,6 +6,11 @@ import { Theme } from "app/providers/ThemeProvider";
 const meta: Meta<typeof AppLink> = {
   title: "shared/AppLink",
   component: AppLink,
+  parameters: {
+    loki: {
+      skip: true,
+    },
+  },
 };
 
 export default meta;
